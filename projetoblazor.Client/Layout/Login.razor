@@ -5,12 +5,13 @@
 <MudGrid Justify="Justify.Center">
 
 	<MudItem xs="8" sm="4">
-		<MudTabs Outlined="true" Centered="true" KeepPanelsAlive = "true">
+		<MudTabs Outlined="true" Centered="true" KeepPanelsAlive="true">
 			<MudTabPanel Text="Login" Icon="@Icons.Material.Filled.Login">
 				<MudCard>
 					<MudCardContent>
-						<MudTextField T="string" Label="Usuário ou Email"/>
-						<MudTextField T="string" Label="Email" Class="mt-3" />
+						<MudTextField T="string" Label="Usuário ou Email" />
+						<MudSelect T="string" Label="Empresa" Clearable="true">
+						</MudSelect>
 						<MudTextField T="string" Label="Password" HelperText="Escolha uma senha forte" Class="mt-3" InputType="InputType.Password" />
 					</MudCardContent>
 					<MudCardActions>
