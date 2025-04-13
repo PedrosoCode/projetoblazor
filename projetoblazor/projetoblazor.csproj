@@ -6,6 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Components\Pages\Login.razor" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <ProjectReference Include="..\projetoblazor.Client\projetoblazor.Client.csproj" />

@@ -1,0 +1,35 @@
+﻿@using System.ComponentModel.DataAnnotations
+@page "/login"
+
+<h1>Login!</h1>
+<MudGrid Justify="Justify.Center">
+
+	<MudItem xs="8" sm="4">
+		<MudTabs Outlined="true" Centered="true" KeepPanelsAlive = "true">
+			<MudTabPanel Text="Login" Icon="@Icons.Material.Filled.Login">
+				<MudCard>
+					<MudCardContent>
+						<MudTextField T="string" Label="Usuário ou Email"/>
+						<MudTextField T="string" Label="Email" Class="mt-3" />
+						<MudTextField T="string" Label="Password" HelperText="Escolha uma senha forte" Class="mt-3" InputType="InputType.Password" />
+					</MudCardContent>
+					<MudCardActions>
+						<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Logar</MudButton>
+					</MudCardActions>
+				</MudCard>
+			</MudTabPanel>
+			<MudTabPanel Text="Cadastrar" Icon="@Icons.Material.Filled.GroupAdd">
+				<MudCard>
+					<MudCardContent>
+						<MudTextField T="string" Label="Nome de usuário" />
+						<MudTextField T="string" Label="E-mail" Class="mt-3" />
+						<MudTextField T="string" Label="Senha" HelperText="Clique aqui se esqueceu sua senha" Class="mt-3" InputType="InputType.Password" />
+					</MudCardContent>
+					<MudCardActions>
+						<MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Cadastrar</MudButton>
+					</MudCardActions>
+				</MudCard>
+			</MudTabPanel>
+		</MudTabs>
+	</MudItem>
+</MudGrid>
