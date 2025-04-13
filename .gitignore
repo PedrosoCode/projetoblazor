@@ -1,0 +1,58 @@
+# Compilados da build
+bin/
+obj/
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Diretórios do VS
+.vscode/
+.vs/
+
+# Diretórios do Rider
+.idea/
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+*.sln.ide
+
+# Diretórios gerados do Blazor
+wwwroot/_framework/
+wwwroot/_content/
+
+# Arquivos do sistema
+Thumbs.db
+Desktop.ini
+
+# Diretórios do sistema
+node_modules/
+dist/
+build/
+
+# Certificados de desenvolvimento
+*.pfx
+*.snk
+
+# Configurações locais
+appsettings.Development.json
+secrets.json
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+
+# Arquivos de publicação
+publish/
