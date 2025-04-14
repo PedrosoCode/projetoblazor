@@ -1,0 +1,58 @@
+﻿@page "/NF"
+@using MudBlazor
+
+<MudPaper Height="400px" Width="100%">
+    <MudContainer Fixed="true">
+            <MudTextField T="string" Label="N NF" Variant="Variant.Outlined"></MudTextField>
+            <MudTextField T="string" Label="Parceiro de negócio" Variant="Variant.Outlined"></MudTextField>
+            <MudNumericField T="double" Label="Valor" Format="F1" Variant="Variant.Outlined" />
+            <MudTextField T="DateTime?" Format="dd-MM-yyyy" Label="Data emissão Início" InputType="InputType.Date" />
+            <MudTextField T="DateTime?" Format="dd-MM-yyyy" Label="Data emissão Término" InputType="InputType.Date" />
+            <MudSelect T="string" Label="Status" Clearable="true" />
+    </MudContainer>
+
+    <MudButton Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Search" Color="Color.Primary">Filtrar</MudButton>
+
+</MudPaper>
+
+<MudDataGrid T="clsNF"
+             Filterable="true"
+             Hover="true"
+             @bind-Items="Elements"
+             FilterMode="@filterMode"
+             FilterCaseSensitivity="@filterCase">
+    <Columns>
+        <PropertyColumn Property="x => x.iNumero" Title="Número" />
+        <PropertyColumn Property="x => x.sParceiroNegocio" Title="Parceiro de Negócio" />
+        <PropertyColumn Property="x => x.sDataEmissao" Title="Data de Emissão" />
+        <PropertyColumn Property="x => x.dValorTotal" Title="Valor Total" />
+        <PropertyColumn Property="x => x.sTipoNF" Title="Tipo de NF" />
+        <PropertyColumn Property="x => x.sStatus" Title="Status" />
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager />
+    </PagerContent>
+</MudDataGrid>
+
+@code {
+    private class clsNF
+    {
+        public int iNumero { get; set; }
+        public string sParceiroNegocio { get; set; } = string.Empty;
+        public string sDataEmissao { get; set; } = string.Empty;
+        public double dValorTotal { get; set; }
+        public string sTipoNF { get; set; } = string.Empty;
+        public string sStatus { get; set; } = string.Empty;
+    }
+
+    private List<clsNF> Elements = new()
+    {
+        new clsNF { iNumero = 1, sParceiroNegocio = "Lizard Pharma", dValorTotal = 12500.98, sDataEmissao = "10/04/2025", sTipoNF = "Saída", sStatus = "Aprovada" },
+        new clsNF { iNumero = 2, sParceiroNegocio = "Genius Foods", dValorTotal = 195010.42, sDataEmissao = "11/04/2025", sTipoNF = "Entrada", sStatus = "Pendente" },
+        new clsNF { iNumero = 3, sParceiroNegocio = "Super Massas", dValorTotal = 8400.00, sDataEmissao = "12/04/2025", sTipoNF = "Saída", sStatus = "Aprovada" },
+        new clsNF { iNumero = 4, sParceiroNegocio = "Artificial Vitamins", dValorTotal = 43200.75, sDataEmissao = "09/04/2025", sTipoNF = "Entrada", sStatus = "Cancelada" }
+    };
+
+    private DataGridFilterMode filterMode = DataGridFilterMode.Simple;
+    private DataGridFilterCaseSensitivity filterCase = DataGridFilterCaseSensitivity.Default;
+}
